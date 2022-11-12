@@ -1,15 +1,15 @@
 namespace Library
 {
-    public class Persona
+    public class Person
     {
-        public int Edad {get; private set;}
+        public int Age {get; private set;}
         
-        public string Nombre {get; private set;}
+        public string Name {get; private set;}
 
-        public Persona(string nombre, int edad)
+        public Person(string name, int age)
         {
-            this.Edad = edad;
-            this.Nombre = nombre;
+            this.Age = age;
+            this.Name = name;
         }
 
         /// <summary>

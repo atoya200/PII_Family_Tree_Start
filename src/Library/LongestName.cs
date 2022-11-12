@@ -1,10 +1,10 @@
 namespace Library
 {
-    public class Visitor3: Visitor
+    public class LongestName: Visitor
     {
 
-        private Persona personaNombreLargo;
-        private int tamañoNombre = 0;
+        private Person longNamePerson;
+        private int nameSize = 0;
 
 
         /// <summary>
@@ -15,7 +15,7 @@ namespace Library
         public override void Visit(Node nodo)
         {
             
-            nodo.Persona.Accept(this);
+            nodo.Person.Accept(this);
             foreach(Node item in nodo.Children)
             {
                 item.Accept(this);
@@ -29,18 +29,18 @@ namespace Library
         /// que la cantidad de letras sea mayor o igual a la cantidad que ya estaba de la pasada anterior o del por defecto.
         /// Luego limpia el mensaje y le carga el texto de cual es el nombre que tiene más letras, con la cantidad de letras que tiene.
         /// </summary>
-        /// <param name="persona">Objeto de tipo persona</param>
-        public override void Visit(Persona persona)
+        /// <param person="person">Objeto de tipo Person, persona</param>
+        public override void Visit(Person person)
         {
-            string nombre  = persona.Nombre.Trim();
-            int cantidadLetrasNombre = nombre.Length;
-            if(tamañoNombre <= cantidadLetrasNombre)
+            string name  = person.Name.Trim();
+            int cantidadLetrasName = name.Length;
+            if(nameSize <= cantidadLetrasName)
             {
-                tamañoNombre = cantidadLetrasNombre;
-                personaNombreLargo = persona;
+                nameSize = cantidadLetrasName;
+                longNamePerson = person;
             }
             ContentBuilder.Clear();
-            ContentBuilder.Append($"El nombre {personaNombreLargo.Nombre} es el más largo, tiene  {tamañoNombre} letras");
+            ContentBuilder.Append($"El nombre {longNamePerson.Name} es el más largo, tiene  {nameSize} letras");
 
         } 
     }

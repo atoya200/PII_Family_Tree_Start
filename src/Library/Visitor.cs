@@ -15,7 +15,7 @@ namespace Library
         protected StringBuilder ContentBuilder { get; } = new StringBuilder();
 
         public abstract void Visit(Node nodo);
-        public abstract void Visit(Persona persona);
+        public abstract void Visit(Person persona);
 
         
     }

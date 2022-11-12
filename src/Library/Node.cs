@@ -6,7 +6,7 @@ namespace Library
 {
     public class Node
     {
-        private Persona persona;
+        private Person person;
 
         /// <summary>
         /// Lista de nodos hijos, esta privada por encapsulación.
@@ -14,13 +14,13 @@ namespace Library
         private List<Node> children = new List<Node>();
 
         /// <summary>
-        /// Propiedad que se refiere a la variable privada persona
+        /// Propiage que se refiere a la variable privada person
         /// </summary>
-        /// <value>Objeto de tipo persona.</value>
-        public Persona Persona {
+        /// <value>Objeto de tipo Person.</value>
+        public Person Person {
             get
             {
-                return this.persona;
+                return this.person;
             }
         }
 
@@ -32,15 +32,15 @@ namespace Library
         }
 
         /// <summary>
-        /// Por Creator el nodo debe ser el encargado de crear las personas, por ende se le pasan los datos
-        /// para su creación
+        /// Por Creator el nodo debe ser el encargado de crear los objetos de tipo Person, ya que 
+        /// contiene objetos de este tipo. Por ende, se le pasan los datos para su creación
         /// </summary>
-        /// <param name="nombre"> Nombre de la persona</param>
-        /// <param name="edad"> Edad de la persona </param>
-        public Node(string nombre, int edad)
+        /// <param name="name"> Nombre de la persona</param>
+        /// <param name="age"> Edad de la persona </param>
+        public Node(string name, int age)
         {
-            Persona newPersona = new Persona(nombre, edad);
-            this.persona = newPersona;
+            Person newPerson = new Person(name, age);
+            this.person = newPerson;
         }
 
         public void AddChildren(Node n)

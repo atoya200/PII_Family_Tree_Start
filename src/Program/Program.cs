@@ -37,15 +37,15 @@ namespace Program
 
 
             // visitar el árbol aquí
-            Visitor visitador = new Visitor1();
+            Visitor visitador = new SumAge();
             visitador.Visit(n1);
             Console.WriteLine(visitador.Content);
             // Parte 1 del desafio
-            visitador = new Visitor2();
+            visitador = new OldestSon();
             visitador.Visit(n1);
             Console.WriteLine(visitador.Content);
             // Parte 2 del desafio
-            visitador = new Visitor3();
+            visitador = new LongestName();
             visitador.Visit(n1);
             Console.WriteLine(visitador.Content);
         }
